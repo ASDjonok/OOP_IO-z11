@@ -7,22 +7,15 @@ public class Lab1 {
 
         final int C = 1;
 
-        double s = 0;
-        boolean wasNoDivisionByZero = true;
-        for (int i = a; i <= n; i++) {
-            if (i + C == 0) {
-                System.out.println("Error! Division by zero.");
-                wasNoDivisionByZero = false;
-                break;
-            } else {
+        if ((a <= -C) && (-C <= n)) {
+            System.out.println("Error! Division by zero.");
+        } else {
+            double s = 0;
+            for (int i = a; i <= n; i++) {
                 for (int j = b; j <= m; j++) {
                     s += (double) (i + j) / (i + C);
                 }
             }
-        }
-
-//        if (s != 0) {
-        if (wasNoDivisionByZero) {
             System.out.println("S = " + s);
         }
     }
