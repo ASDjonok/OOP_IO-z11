@@ -9,13 +9,13 @@ public class Lab1 {
 
         double s = 0;
         boolean wasNoDivisionByZero = true;
-        l: for (int i = a; i <= n; i++) {
-            for (int j = b; j <= m; j++) {
-                if (i + C == 0) {
-                    System.out.println("Error! Division by zero.");
-                    wasNoDivisionByZero = false;
-                    break l; // "goto"
-                } else {
+        for (int i = a; i <= n; i++) {
+            if (i + C == 0) {
+                System.out.println("Error! Division by zero.");
+                wasNoDivisionByZero = false;
+                break;
+            } else {
+                for (int j = b; j <= m; j++) {
                     s += (double) (i + j) / (i + C);
                 }
             }
